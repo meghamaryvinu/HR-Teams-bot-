@@ -233,5 +233,5 @@ async def root():
     import uvicorn
     # The --reload flag should ideally be used from the command line for better control.
     # When running programmatically, it can lead to issues with multiprocessing.
-    # For simple local dev, it's fine, but for production, you'd run 'uvicorn PranabBot:app'
+    # For simple local dev, it's fine, but for production, you'd run 'uvicorn TeamsBot:app'
     uvicorn.run(app, host="0.0.0.0", port=8000)'''

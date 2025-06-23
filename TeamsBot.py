@@ -163,8 +163,10 @@ async def chat_endpoint(request: ChatRequest):
     based on HR documents, leveraging Azure OpenAI and MultiQueryRetriever.
     """
     # Check if LLM and vector store are ready
-    if not llm or not vectors:
-        raise HTTPException(status_code=503, detail="Chatbot not ready. Resources are still loading or failed to initialize. Please try again in a moment.")
+    if not llm:
+        raise HTTPException(status_code=503, detail="Chatbot not ready")
+    elif not vectors:
+        raise HTTPException(status_code=504, detail="Resources are still loading or failed to initialize. Please try again in a moment.")
 
     # Define Main Prompt Template for RAG
     prompt = ChatPromptTemplate.from_template(

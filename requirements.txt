@@ -1,8 +1,14 @@
 fastapi
 uvicorn
 python-dotenv
+pydantic
+azure-storage-blob
 langchain
+langchain-core
 langchain-openai
-langchain-community
 langchain-huggingface
+langchain-community
+faiss-cpu
 sentence-transformers
+pypdf
+botbuilder-core
